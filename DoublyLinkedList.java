@@ -129,7 +129,6 @@ public class DoublyLinkedList<E> {
                 //link the previous node to the next node, skipping current
                 //so a prev -> current(null) -> next becomes
                 //prev -> next
-
                 current.getNext().setPrev(current.getPrev());
                 current.getPrev().setNext(current.getNext());
 
