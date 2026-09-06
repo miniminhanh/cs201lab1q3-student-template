@@ -120,10 +120,8 @@ public class DoublyLinkedList<E> {
             return;
         }
 
-        //traverse\
-        //header is a sentinel node, pls use the one after header
-        Node<E> current = header.getNext();
-    
+        //traverse
+        Node<E> current = header;
 
         while (current != null){
 
@@ -132,8 +130,6 @@ public class DoublyLinkedList<E> {
             if (current.getElement() == null){
 
                 //link the previous node to the next node, skipping current
-                //so prev -> current (null) -> next becomes
-                //prev -> next
                 if (current.getNext() != null){
                     current.getNext().setPrev(current.getPrev());
                 }  else {
@@ -143,23 +139,23 @@ public class DoublyLinkedList<E> {
                 if(current.getPrev() != null){
                     current.getPrev().setNext(current.getNext());
                 } else {
-                    header.setNext(current.getNext());;
+                    header = current.getNext();
                 }
 
                 //adding nulls to the front
                 //only need to do this if we actually read a null
                 current.setPrev(null);
-                current.setNext(header.getNext());
+                current.setNext(header);
             }
 
 
             if(header != null){
-                header.getPrev().setPrev(current);
+                header.setPrev(current);
             } else {
-                trailer.setPrev(current);
+                trailer = current;
             }
 
-            header.setNext(current);
+            header = current;
 
             current = next;
 
