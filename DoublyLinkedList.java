@@ -116,10 +116,6 @@ public class DoublyLinkedList<E> {
 
     public void group(){
 
-        if (isEmpty()){
-            return;
-        }
-
         //traverse
         Node<E> current = header.getNext();
 
