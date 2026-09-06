@@ -121,7 +121,11 @@ public class DoublyLinkedList<E> {
         }
 
         //traverse
-        Node<E> current = header.getNext();
+        Node<E> current = header;
+
+        if(current.getNext() != null){
+            current = current.getNext();
+        }
 
         //cannot use != null as the headers and trailers are sentinel nodes (with null elements)
         while (current != trailer){
