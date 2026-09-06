@@ -121,8 +121,7 @@ public class DoublyLinkedList<E> {
         }
 
         //traverse
-        //start from trailer to push all the nulls in front
-        Node<E> current = trailer;
+        Node<E> current = header;
 
         while (current != null){
 
