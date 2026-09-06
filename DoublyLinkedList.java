@@ -141,11 +141,13 @@ public class DoublyLinkedList<E> {
                 } else {
                     header = current.getNext();
                 }
+
+                //adding nulls to the front
+                //only need to do this if we actually read a null
+                current.setPrev(null);
+                current.setNext(header);
             }
 
-            //adding current to the front
-            current.setPrev(null);
-            current.setNext(header);
 
             if(header != null){
                 header.setPrev(current);
