@@ -120,6 +120,7 @@ public class DoublyLinkedList<E> {
         Node<E> current = header.getNext();
 
         //cannot use != null as the headers and trailers are sentinel nodes (with null elements)
+        //
         while (current != trailer){
 
             Node<E> next = current.getNext();
